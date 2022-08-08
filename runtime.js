@@ -47,13 +47,13 @@ const extraLargeArray = getSizedArray(100000);
 
 // Try it with first function
 perf.start();                     // Starts timer
-doublerAppend(smallArray);
+doublerAppend(extraLargeArray);
 let resultsAppend = perf.stop();  // Stops timer and save time results
 
 
 // Try it with second function
 perf.start();
-doublerInsert(smallArray);
+doublerInsert(extraLargeArray);
 let resultsInsert = perf.stop();
 
 
@@ -61,30 +61,65 @@ console.log('Results for the extraLargeArray');
 console.log("insert", resultsInsert.preciseWords);
 console.log("append", resultsAppend.preciseWords);
 
+console.log('Results for the largeArray');
+console.log("insert", resultsInsert.preciseWords);
+console.log("append", resultsAppend.preciseWords);
+
+console.log('Results for the mediumArray');
+console.log("insert", resultsInsert.preciseWords);
+console.log("append", resultsAppend.preciseWords);
+
+console.log('Results for the smallArray');
+console.log("insert", resultsInsert.preciseWords);
+console.log("append", resultsAppend.preciseWords);
+
+console.log('Results for the tinyArray');
+console.log("insert", resultsInsert.preciseWords);
+console.log("append", resultsAppend.preciseWords);
 
 
-// extraLargeArray results
-// insert 1.027223657 s
-// append 4.303574 ms
 
 // tinyArray results
-// insert 17.959 μs
-// append 72.542 μs
+
+// insert 1.2959 μs
+
+// append 1.245μs
+
+
+
 
 // smallArray results
-// insert 24.708 μs
+
+// insert 43.708 μs
+
 // append 59.375 μs
 
+
+
+
 // mediumArray results
-// insert 118.5 μs
-// append 87.125 μs
+
+// insert 1.328525 ms
+
+// append 313.125 μs
+
+
+
 
 // largeArray results
-// insert 6.346 ms
+
+// insert 9.162125 ms
+
 // append 408.584 μs
 
+
+
+
 // extraLargeArray results
-// insert 767.322 ms
-// append 2.310208 ms
+
+// insert 1.1172033749999s
+
+// append 4.14875 ms
 
 
+// Our "doublerappend" is getting faster and faster as our input grows, making it more efficient than the "doublerinsert." Multiple double-inserts did prove to be faster, but this was only possible because of the small input size. However, doublerappend is preferable for large input in either case..
